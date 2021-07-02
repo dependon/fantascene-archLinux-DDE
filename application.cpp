@@ -77,13 +77,13 @@ const QString toMd5(const QByteArray &data)
 Application::Application(int &argc, char **argv)
     : DApplication(argc, argv)
 {
-    this->setApplicationName(tr("fantascene-dynamic-wallpaper"));
-    this->setApplicationDisplayName(tr("fantascene-dynamic-wallpaper"));
+    this->setApplicationName(tr("fantascene-archLinux-DDE"));
+    this->setApplicationDisplayName(tr("fantascene-archLinux-DDE"));
     this->setApplicationDescription(
         QObject::tr(
             "<span style='font-size:10pt;font-weight:60;'>wallpaper by deepin community</span><br/>"
-            "<a href='https://github.com/dependon/fantascene-dynamic-wallpaper/'>github/fantascene-dynamic-wallpaper</a><br/>"
-            "<a href='https://gitee.com/liuminghang/fantascene-dynamic-wallpaper/'>gitee/fantascene-dynamic-wallpaper</a><br/>"
+            "<a href='https://github.com/dependon/fantascene-archLinux-DDE/'>github/fantascene-archLinux-DDE</a><br/>"
+            "<a href='https://gitee.com/liuminghang/fantascene-archLinux-DDE/'>gitee/fantascene-archLinux-DDE</a><br/>"
             "<span style='font-size:12pt;'>mail: liuminghang0821@gmail.com</span><br/><br/>"
             "Published under GPL V3"
         )
@@ -135,15 +135,15 @@ bool Application::setThumbnail(const QString &path)
     }
     const QString md5s = toMd5(url.toString(QUrl::FullyEncoded).toLocal8Bit());
     const QString thumPath = PIC_DIR_PATH + "/" + md5s + ".png";
-    QString commod = "ffmpeg -i " + path + " -ss 00:00:00.000 -vframes 1 -vf 'scale=256:144' " + thumPath +" |y";
+    QString commod = "ffmpeg -i " + path + " -ss 00:00:00.000 -vframes 1 -vf 'scale=256:144' " + thumPath + " |y";
     qDebug() << commod;
 //    QProcess::execute(commod);
-    if(!QFileInfo(thumPath).isFile()){
-          system(commod.toStdString().c_str());
+    if (!QFileInfo(thumPath).isFile()) {
+        system(commod.toStdString().c_str());
     }
 
     return true;
-//    system("ffmpeg -i /opt/durapps/fantascene-dynamic-wallpaper/09.mp4 -ss 00:00:00.000 -vframes 1 -vf 'scale=256:144' /home/lmh/.config/fantascene-dynamic-wallpaper/.thumbnail/d18420fa260c7eff8fd0f2fac2f7b1cf.png");
+//    system("ffmpeg -i /opt/durapps/fantascene-archLinux-DDE/09.mp4 -ss 00:00:00.000 -vframes 1 -vf 'scale=256:144' /home/lmh/.config/fantascene-archLinux-DDE/.thumbnail/d18420fa260c7eff8fd0f2fac2f7b1cf.png");
 }
 
 const QPixmap Application::getThumbnail(const QString &path)
@@ -165,9 +165,9 @@ const QPixmap Application::getThumbnail(const QString &path)
         url = QUrl(path);
     }
 
-    QPixmap  wallPix(QFileInfo(path).path()+"/"+"preview.jpg");
-    if(!wallPix.isNull()){
-        return wallPix.scaled(256,144);
+    QPixmap  wallPix(QFileInfo(path).path() + "/" + "preview.jpg");
+    if (!wallPix.isNull()) {
+        return wallPix.scaled(256, 144);
     }
     const QString md5s = toMd5(url.toString(QUrl::FullyEncoded).toLocal8Bit());
     const QString encodePath = cacheP + "/large/" + md5s + ".png";

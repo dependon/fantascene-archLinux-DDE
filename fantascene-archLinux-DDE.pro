@@ -3,7 +3,7 @@ TEMPLATE = app
 QT += gui x11extras widgets dbus webengine webenginewidgets
 CONFIG += c++11 link_pkgconfig
 PKGCONFIG += xcb-ewmh dtkwidget mpv x11
-TARGET = fantascene-dynamic-wallpaper
+TARGET = fantascene-archLinux-DDE
 
 DEFINES += QT_DEPRECATED_WARNINGS
 
@@ -50,16 +50,16 @@ CONFIG(release, debug|release) {
 }
 
 OTHER_FILES+=$$PWD/install/*
-target.path=/opt/durapps/fantascene-dynamic-wallpaper
+target.path=/opt/durapps/fantascene-archLinux-DDE
 
-other.path=/opt/durapps/fantascene-dynamic-wallpaper
+other.path=/opt/durapps/fantascene-archLinux-DDE
 other.files= $$PWD/install/*
 
 desktop.path = /usr/share/applications/
-desktop.files = $$PWD/install/fantascene-dynamic-wallpaper.desktop
+desktop.files = $$PWD/install/fantascene-archLinux-DDE.desktop
 
 desktopleft.path = /usr/share/deepin/dde-file-manager/oem-menuextensions/
-desktopleft.files = $$PWD/install/fantascene-dynamic-wallpaper.desktop
+desktopleft.files = $$PWD/install/fantascene-archLinux-DDE.desktop
 
 DISTFILES += \
     com.deepin.dde.DreamScene.service
@@ -67,7 +67,7 @@ DISTFILES += \
 dbus_service.files += com.deepin.dde.fantascene.service
 dbus_service.path = /usr/share/dbus-1/services
 
-APPSHAREDIR = /usr/share/fantascene-dynamic-wallpaper
+APPSHAREDIR = /usr/share/fantascene-archLinux-DDE
 
 translations.path = $$APPSHAREDIR/translations
 translations.files = $$PWD/translations/*.qm
@@ -81,5 +81,5 @@ FORMS += \
     listview/wallpaperengineplugin.ui
 
 TRANSLATIONS += \
-    translations/fantascene-dynamic-wallpaper_zh_CN.ts \
-    translations/fantascene-dynamic-wallpaper_es.ts
+    translations/fantascene-archLinux-DDE_zh_CN.ts \
+    translations/fantascene-archLinux-DDE_es.ts

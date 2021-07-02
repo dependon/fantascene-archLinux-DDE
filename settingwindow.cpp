@@ -29,7 +29,7 @@ DCORE_USE_NAMESPACE
 
 #define SETTINGPATH "config.ini"
 const QString CONFIG_PATH =   QDir::homePath() +
-                              "/.config/fantascene-dynamic-wallpaper/config.ini";
+                              "/.config/fantascene-archLinux-DDE/config.ini";
 
 
 settingWindow::settingWindow(QWidget *parent, DMainWindow *mainWindow) :
@@ -89,7 +89,7 @@ settingWindow::settingWindow(QWidget *parent, DMainWindow *mainWindow) :
 //    QAction *maingithub = new QAction(m_traymenu);
 //    maingithub->setText("github");
 //    connect(maingithub, &QAction::triggered, this, [ = ] {
-//        QDesktopServices::openUrl(QUrl(QLatin1String("https://github.com/dependon/fantascene-dynamic-wallpaper/")));
+//        QDesktopServices::openUrl(QUrl(QLatin1String("https://github.com/dependon/fantascene-archLinux-DDE/")));
 //    });
 
     m_traymenu->addAction(setMainViewAction);
@@ -145,13 +145,13 @@ settingWindow::settingWindow(QWidget *parent, DMainWindow *mainWindow) :
 //        QAction *aboutgit = new QAction(m_aboutMenu);
 //        aboutgit->setText(tr("github"));
 //        connect(aboutgit, &QAction::triggered, this, [ = ] {
-//            QDesktopServices::openUrl(QUrl(QLatin1String("https://github.com/dependon/fantascene-dynamic-wallpaper/")));
+//            QDesktopServices::openUrl(QUrl(QLatin1String("https://github.com/dependon/fantascene-archLinux-DDE/")));
 //        });
 
         QAction *aboutMe = new QAction(m_aboutMenu);
         aboutMe->setText(tr("Latest version"));
         connect(aboutMe, &QAction::triggered, this, [ = ] {
-            QDesktopServices::openUrl(QUrl(QLatin1String("https://github.com/dependon/fantascene-dynamic-wallpaper/releases")));
+            QDesktopServices::openUrl(QUrl(QLatin1String("https://github.com/dependon/fantascene-archLinux-DDE/releases")));
         });
 //        m_aboutMenu->addAction(aboutgit);
         m_aboutMenu->addAction(aboutMe);
@@ -406,13 +406,13 @@ void settingWindow::on_autoStart_clicked()
 {
 
     QString path = QStandardPaths::writableLocation(QStandardPaths::HomeLocation) + "/.config/deepin-dreamscene/";
-    if (!QFileInfo(QStandardPaths::writableLocation(QStandardPaths::HomeLocation) + "/.config/autostart/fantascene-dynamic-wallpaper.desktop").isFile())
-        QProcess::execute("cp /opt/durapps/fantascene-dynamic-wallpaper/fantascene-dynamic-wallpaper.desktop " + QStandardPaths::writableLocation(QStandardPaths::HomeLocation) + "/.config/autostart/");
+    if (!QFileInfo(QStandardPaths::writableLocation(QStandardPaths::HomeLocation) + "/.config/autostart/fantascene-archLinux-DDE.desktop").isFile())
+        QProcess::execute("cp /opt/durapps/fantascene-archLinux-DDE/fantascene-archLinux-DDE.desktop " + QStandardPaths::writableLocation(QStandardPaths::HomeLocation) + "/.config/autostart/");
 }
 
 void settingWindow::on_noAutoStart_clicked()
 {
-    QFile::remove(QStandardPaths::writableLocation(QStandardPaths::HomeLocation) + "/.config/autostart/fantascene-dynamic-wallpaper.desktop");
+    QFile::remove(QStandardPaths::writableLocation(QStandardPaths::HomeLocation) + "/.config/autostart/fantascene-archLinux-DDE.desktop");
 }
 
 void settingWindow::on_autoStartBox_stateChanged(int arg1)
@@ -478,7 +478,7 @@ void settingWindow::quitApp()
 
 void settingWindow::on_mainWeb_clicked()
 {
-    QDesktopServices::openUrl(QUrl(QLatin1String("https://github.com/dependon/fantascene-dynamic-wallpaper")));
+    QDesktopServices::openUrl(QUrl(QLatin1String("https://github.com/dependon/fantascene-archLinux-DDE")));
 }
 
 void settingWindow::on_history_clicked()
@@ -514,17 +514,17 @@ void settingWindow::slotWallPaper(const QString &path)
 
 void settingWindow::on_giteeWeb_clicked()
 {
-    QDesktopServices::openUrl(QUrl(QLatin1String("https://gitee.com/liuminghang/fantascene-dynamic-wallpaper/releases")));
+    QDesktopServices::openUrl(QUrl(QLatin1String("https://gitee.com/liuminghang/fantascene-archLinux-DDE/releases")));
 }
 
 void settingWindow::on_githubWeb_clicked()
 {
-    QDesktopServices::openUrl(QUrl(QLatin1String("https://github.com/dependon/fantascene-dynamic-wallpaper/releases")));
+    QDesktopServices::openUrl(QUrl(QLatin1String("https://github.com/dependon/fantascene-archLinux-DDE/releases")));
 }
 
 void settingWindow::on_bugBtn_clicked()
 {
-    QDesktopServices::openUrl(QUrl(QLatin1String("https://github.com/dependon/fantascene-dynamic-wallpaper/issues/new")));
+    QDesktopServices::openUrl(QUrl(QLatin1String("https://github.com/dependon/fantascene-archLinux-DDE/issues/new")));
 }
 
 void settingWindow::on_videoBLCombox_activated(const QString &arg1)

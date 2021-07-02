@@ -1,0 +1,18 @@
+[Desktop Entry]
+Categories=Application;
+Comment=fantascene-archLinux-DDE
+Comment[zh_CN]=幻梦动态壁纸
+Encoding=UTF-8
+Exec=/opt/durapps/fantascene-archLinux-DDE/fantascene-archLinux-DDE
+GenericName=fantascene-archLinux-DDE
+GenericName[zh_CN]=幻梦动态壁纸
+Icon=/opt/durapps/fantascene-archLinux-DDE/wallpaper.png
+Name=fantascene-archLinux-DDE
+Name[zh_CN]=幻梦动态壁纸
+StartupNotify=false
+Terminal=false
+Type=Application
+Version=1.0.0.0
+X-Deepin-ManualID=fantascene-archLinux-DDE
+X-Deepin-TurboType=dtkwidget
+X-Deepin-Vendor=deepin
