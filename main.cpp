@@ -98,6 +98,9 @@ int main(int argc, char *argv[])
 
         Wallpaper *w = new Wallpaper(window->getCurrentPath(), window->getCurrentNumber());
         dApp->setDesktopTransparent();
+        QTimer::singleShot(2000, [ = ] {
+            dApp->setDesktopTransparent();
+        });
 //        qDebug() << qApp->desktop()->screenNumber();
 //        qDebug() << qApp->desktop()->primaryScreen();
 //        qDebug() << qApp->desktop()->screenCount();
