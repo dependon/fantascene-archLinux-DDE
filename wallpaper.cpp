@@ -355,16 +355,19 @@ void Wallpaper::slotsetScreenMode(const QString &mode)
 
 
 }
-
+#include <QtPlatformHeaders/QXcbWindowFunctions>
 void Wallpaper::registerDesktop()
 {
-    xcb_ewmh_connection_t m_ewmh_connection;
-    xcb_intern_atom_cookie_t *cookie = xcb_ewmh_init_atoms(QX11Info::connection(), &m_ewmh_connection);
-    xcb_ewmh_init_atoms_replies(&m_ewmh_connection, cookie, NULL);
+    winId();
 
-    xcb_atom_t atoms[1];
-    atoms[0] = m_ewmh_connection._NET_WM_WINDOW_TYPE_DESKTOP;
-    xcb_ewmh_set_wm_window_type(&m_ewmh_connection, winId(), 1, atoms);
+    QXcbWindowFunctions::setWmWindowType(windowHandle(), QXcbWindowFunctions::Desktop);
+//    xcb_ewmh_connection_t m_ewmh_connection;
+//    xcb_intern_atom_cookie_t *cookie = xcb_ewmh_init_atoms(QX11Info::connection(), &m_ewmh_connection);
+//    xcb_ewmh_init_atoms_replies(&m_ewmh_connection, cookie, NULL);
+
+//    xcb_atom_t atoms[1];
+//    atoms[0] = m_ewmh_connection._NET_WM_WINDOW_TYPE_DESKTOP;
+//    xcb_ewmh_set_wm_window_type(&m_ewmh_connection, winId(), 1, atoms);
 
     QTimer::singleShot(1, this, [ = ] {
         show();

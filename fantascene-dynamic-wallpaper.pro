@@ -2,7 +2,8 @@ TEMPLATE = app
 
 QT += gui x11extras widgets dbus webengine webenginewidgets
 CONFIG += c++11 link_pkgconfig
-PKGCONFIG += xcb-ewmh dtkwidget mpv x11
+PKGCONFIG +=  dtkwidget mpv x11
+#xcb-ewmh
 TARGET = fantascene-dynamic-wallpaper
 
 DEFINES += QT_DEPRECATED_WARNINGS
